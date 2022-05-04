@@ -1,0 +1,15 @@
+.basket{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.basket_total-price{
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.basket_icon{
+    position: relative;
+    cursor: pointer;
+}

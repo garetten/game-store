@@ -1,0 +1,9 @@
+.btn-buy{
+    border-radius: 15px;
+    color:white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(10, 10, 104);
+    padding: 8px;
+}
