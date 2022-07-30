@@ -12,7 +12,7 @@ export default function GameItem({game}) {
             <span className='game-item_title'>{game.title}</span>
             <div className='game-item_genre'>
                 {
-                    game.genres.map(genre=><GameGenre genre={genre}/>)
+                    game.genres.map((genre,index)=><GameGenre key={index} genre={genre}/>)
                 }
             </div>
             <div className='game-item_buy'>
