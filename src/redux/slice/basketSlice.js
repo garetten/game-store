@@ -10,7 +10,7 @@ const basketSlice = createSlice({
         },
         deleteCart(state,action){
             console.log(action.payload.payload)
-            state = state.filter(game=>game.id !== action.payload.payload.id)
+            state = state.filter(game=>game.id !== action.payload.payload)
             return state;
         }
     }

@@ -14,7 +14,7 @@ export default function GameBuy({game}) {
   function addBasket(e){
     e.stopPropagation();
     if(isGameInBasket){
-      dispatch(deleteCart({payload:game}))
+      dispatch(deleteCart({payload:game.id}))
       isGameInBasket = false;
     }
     else{

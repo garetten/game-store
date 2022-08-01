@@ -4,7 +4,7 @@ import GameInBasket from '../game-in-basket/game-in-basket'
 import './basket-menu.css'
 
 export default function BasketMenu({items,onClick,totalPrice}) {
-  console.log(items)
+
   return (
     <div className='basket-menu'>
       <div className='basket-menu__games-list'>
