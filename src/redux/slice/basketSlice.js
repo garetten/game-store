@@ -12,9 +12,14 @@ const basketSlice = createSlice({
             console.log(action.payload.payload)
             state = state.filter(game=>game.id !== action.payload.payload)
             return state;
+        },
+        deleteAll(state,action){
+            state = [];
+            return state
         }
+        
     }
 })
 
-export const {addCart,deleteCart} = basketSlice.actions;
+export const {addCart,deleteCart,deleteAll} = basketSlice.actions;
 export default basketSlice.reducer;
