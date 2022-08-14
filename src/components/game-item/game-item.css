@@ -8,7 +8,7 @@
     cursor: pointer;
     position: relative;
 }
-.game-item:not(:last-child){
+.game-item{
     margin-bottom: 30px;
     margin-right: 50px;
 }
@@ -32,4 +32,12 @@
     position: absolute;
     right: 0;
     bottom: -12px;
+}
+
+@media (max-width:711px) {
+
+    .game-item{
+    
+        margin-right: 0px;
+    }
 }

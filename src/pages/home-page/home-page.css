@@ -1,4 +1,10 @@
 .home-page{
     display: flex;
+    margin: 0 auto;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media(max-width:1188px){
+    
 }

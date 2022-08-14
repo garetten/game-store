@@ -18,3 +18,16 @@
     font-weight: bold;
     margin-left: auto;
 }
+
+.order_text_container{
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(max-width:722px){
+    .order_text_container{
+        flex-direction: column;
+        flex: 0 0 auto;
+    }
+}

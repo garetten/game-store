@@ -19,3 +19,11 @@
     justify-content: space-between;
     margin-bottom: 15px;
 }
+
+@media(max-width:480px){
+    .basket-menu{
+        width: 300px;
+        left: -250px;
+
+    }
+}

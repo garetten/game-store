@@ -17,6 +17,7 @@ export default function OrderItem({game}) {
     <div className="order-item__cover">
     <GameImage image={ game.image }/>
     </div>
+    <div className='order_text_container'>
     <div className="order-item__title">
     <span> { game.title } </span>
     </div>
@@ -27,6 +28,7 @@ export default function OrderItem({game}) {
             className="cart-item__delete-icon"
             onClick={handleDeleteClick}
         />
+    </div>
     </div>
 </div>
   )
