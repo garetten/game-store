@@ -18,8 +18,7 @@ export default function GamePage() {
     <div className="game-page__content">
       <div className="game-page__left">
         <iframe
-          width="90%"
-          height="400px"
+          className="game-page__video"
           src={game.video}
           title="YouTube video player"
           frameBorder="0"
