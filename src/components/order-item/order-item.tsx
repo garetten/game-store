@@ -1,16 +1,19 @@
 import React from 'react';
 import './order-item.css';
-import { useDispatch} from 'react-redux/es/exports';
+
+
+import { useAppDispatch } from '../../redux';
 import GameImage from '../game-image/game-image';
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 import { deleteCart } from '../../redux/slice/basketSlice';
+import { IGame } from '../../types/types';
 
-export default function OrderItem({game}) {
-    const dispatch = useDispatch();
+export default function OrderItem({game}:{game:IGame}) {
+    const dispatch = useAppDispatch();
 
     const handleDeleteClick = ()=>{
         console.log("click")
-        dispatch(deleteCart({payload:game.id}))
+        dispatch(deleteCart(game.id))
     }
   return (
 <div className="order-item">

@@ -1,7 +1,10 @@
 import React from 'react';
 import'./items-in-basket.css';
 
-export default function ItemsInBasket({quantity}) {
+interface IItemsInBasket{
+  quantity:number
+}
+export default function ItemsInBasket({quantity}:IItemsInBasket) {
     
   return quantity?(
     <div className='items-in-cart'>

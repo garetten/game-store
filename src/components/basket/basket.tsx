@@ -1,14 +1,14 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import './basket.css';
 import {BiCartAlt} from 'react-icons/bi';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useAppSelector } from '../../redux';
 import BasketMenu from '../cart-menu/basket-menu';
 import ItemsInBasket from '../items-in-basket/items-in-basket';
 import { useNavigate } from 'react-router-dom';
 
 export default function Basket() {
   const [isBasketMenuVisible,setIsBasketMenuVisible] = useState(false);
-  const game = useSelector(state=>state.basket);
+  const game = useAppSelector(state=>state.basket);
   const navigate = useNavigate();
 
   const handleClick = useCallback( ()=>{

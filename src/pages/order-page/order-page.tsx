@@ -1,6 +1,7 @@
-import React,{useMemo, useState} from 'react';
+import React, { useMemo, useState } from 'react';
 import './order-page.css';
-import { useSelector,useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../../redux';
 import OrderItem from '../../components/order-item/order-item';
 import Button from '../../components/button/button';
 import { deleteAll } from '../../redux/slice/basketSlice';
@@ -8,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function OrderPage() {
-  const games = useSelector(state=> state.basket);
+  const games = useAppSelector(state=> state.basket);
   const [isOrderBuy,setIsOrderBuy] = useState(false);
   const dispatch = useDispatch()
   const hadleClick = ()=>{
@@ -42,7 +43,7 @@ export default function OrderPage() {
     <div className="order-page__right">
         <div className="order-page__total-price">
             <span className="order-page__sum">{ games.length } товаров на сумму {priceGame} грн.</span>
-            <Button onClick={hadleClick} className="order-page__buy">Оформить заказ</Button>
+            <Button onClick={hadleClick}>Оформить заказ</Button>
         </div>
     </div>
 </div>

@@ -1,24 +1,27 @@
 import React, { useMemo } from 'react';
 import Button from '../button/button';
 import './game-buy.css';
-import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { useAppDispatch,useAppSelector } from '../../redux';
 import { addCart, deleteCart } from '../../redux/slice/basketSlice';
+import { IGame } from '../../types/types';
 
-
-export default function GameBuy({game}) {
-  const dispatch = useDispatch();
-  const games = useSelector(state=>state.basket);
+interface IGameBuy{
+  game:IGame;
+}
+export default function GameBuy({game}:IGameBuy) {
+  const dispatch = useAppDispatch();
+  const games = useAppSelector(state=>state.basket);
   let isGameInBasket = useMemo(()=>{
     return games.some(item=>item.id === game.id);
   },[games,game.id])
-  function addBasket(e){
+  function addBasket(e:React.MouseEvent<HTMLButtonElement>){
     e.stopPropagation();
     if(isGameInBasket){
-      dispatch(deleteCart({payload:game.id}))
+      dispatch(deleteCart(game.id))
       isGameInBasket = false;
     }
     else{
-      dispatch(addCart({payload:game}));
+      dispatch(addCart(game));
     }
 
   }

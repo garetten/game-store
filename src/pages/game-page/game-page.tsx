@@ -1,14 +1,13 @@
 import React from 'react';
 import './game-page.css';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../redux';
 import GameImage from '../../components/game-image/game-image'
 import GameGenre from '../../components/game-genre/game-genre'
 import GameBuy from '../../components/game-buy/game-buy'
 
 
 export default function GamePage() {
-  const game = useSelector(state=>state.currentGame.currentGame);
-  console.log(game)
+  const game = useAppSelector(state=>state.currentGame.currentGame);
   if(!game){
     return null
   }

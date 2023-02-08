@@ -1,7 +1,13 @@
 import './game-in-basket.css'
 import React from 'react'
+import { IGame } from '../../types/types'
 
-export default function GameInBasket({game}) {
+interface IGameInBasket{
+  game:IGame
+}
+
+
+export default function GameInBasket({game}:IGameInBasket) {
   return (
     <div className='game-in-basket'>
         <span>{game.title}</span>

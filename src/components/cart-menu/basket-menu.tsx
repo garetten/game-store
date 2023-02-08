@@ -1,9 +1,17 @@
 import React from 'react'
+import { IGame } from '../../types/types'
 import Button from '../button/button'
 import GameInBasket from '../game-in-basket/game-in-basket'
 import './basket-menu.css'
 
-export default function BasketMenu({items,onClick,totalPrice}) {
+interface IBasketMenu{
+  items:IGame[],
+  onClick:()=>void,
+  totalPrice:number
+
+}
+
+export default function BasketMenu({items,onClick,totalPrice}:IBasketMenu) {
 
   return (
     <div className='basket-menu'>

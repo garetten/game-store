@@ -1,9 +1,9 @@
 import React from 'react';
 import GameItem from '../../components/game-item/game-item';
 import './home-page.css';
+import { IGame } from '../../types/types';
 
-
-const GAMES = [
+const GAMES:Array<IGame> = [
   {
       image: '/game-covers/forza_5.jpeg',
       title: 'Forza Horizon 5',

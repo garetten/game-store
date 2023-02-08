@@ -1,19 +1,33 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+
 import GameBuy from '../game-buy/game-buy';
 import GameGenre from '../game-genre/game-genre';
 import GameImage from '../game-image/game-image';
 import './game-item.css';
 import { setCurrentGame } from '../../redux/slice/currentGame';
+import { IGame } from '../../types/types';
+import { useAppDispatch } from '../../redux';
 
-export default function GameItem({game}) {
+
+interface IGameItem{
+  game:IGame
+}
+
+export default function GameItem({game}:IGameItem) {
+ 
+ 
+ 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const handleClick = ()=>{
-    dispatch(setCurrentGame({payload:game}))
+    dispatch(setCurrentGame(game))
     navigate(`/${game.title}`);
   }
+ 
+ 
+ 
+ 
   return (
     <div className='game-item' onClick={handleClick}>
         <GameImage image={game.image}/>
